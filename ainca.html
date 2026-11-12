@@ -754,6 +754,8 @@ body.ink-top{border-top:var(--ink-h,0px) solid transparent}
     }
     const root = $('#root'); if (root) add(kids(root), 'text');
     const view = $('#view') || $('#main'); if (view && !app && !root) add(kids(view), 'text');   // 11-10 통합앱·선생님 앱·학습 현황·일정표(목록·현황 화면)에도 필기
+    add(document.querySelectorAll('.ink-page'), 'img');   // 11-11 시험보기·원문 보기: #app 밖 보기 창의 PDF 쪽 그림(쪽마다 data-p)
+    add(document.querySelectorAll('.ink-text'), 'text');   // 11-12 시험보기: #app 밖 보기 창의 글 지문(쪽 그림이 없는 지문)에도 필기
     add(document.querySelectorAll('.gc-month'), 'text');   // 11-10 일정표 달력: 달 블록 하나 = 카드 하나(학생·달로 저장)
     return out;
   }
